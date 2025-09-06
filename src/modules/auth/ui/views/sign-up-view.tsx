@@ -116,14 +116,14 @@ const SignUpView = () => {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>Name</FormLabel>
                         <FormControl>
                           <Input
                             type="name"
                             placeholder="John Doe"
                             {...field}
                           />
-                        </FormControl>
+                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
