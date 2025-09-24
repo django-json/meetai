@@ -36,13 +36,21 @@ const CommandSelect = ({
   const [open, setOpen] = useState(false);
   const selectedOption = options.find((option) => option.value === value);
 
+  const handleOpenChange = (open: boolean) => {
+    if (open) {
+      onSearch?.("");
+    }
+
+    setOpen(open);
+  };
+
   return (
     <>
       <Button
         type="button"
         variant="outline"
         className={cn("h-9 justify-between font-normal px-2", className)}
-        onClick={() => setOpen(true)}
+        onClick={() => handleOpenChange(true)}
       >
         <div>{selectedOption?.children ?? placeholder}</div>
         <ChevronsUpDownIcon />
@@ -50,7 +58,7 @@ const CommandSelect = ({
       <CommandResponsiveDialog
         shouldFilter={!onSearch}
         open={open}
-        onOpenChange={setOpen}
+        onOpenChange={handleOpenChange}
       >
         <CommandInput placeholder="Search..." onValueChange={onSearch} />
         <CommandList>
