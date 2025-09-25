@@ -1,31 +1,34 @@
 import ResponsiveDialog from "@/components/responsive-dialog";
-import { useRouter } from "next/navigation";
 import MeetingForm from "./meeting-form";
+import { MeetingGetOne } from "@/modules/meetings/types";
 
-interface NewMeetingDialogProps {
+interface UpdateMeetingDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  initialValues: MeetingGetOne;
 }
 
-const NewMeetingDialog = ({ open, onOpenChange }: NewMeetingDialogProps) => {
-  const router = useRouter();
-
+const UpdateMeetingDialog = ({
+  open,
+  initialValues,
+  onOpenChange,
+}: UpdateMeetingDialogProps) => {
   return (
     <ResponsiveDialog
-      title="New Meeting"
-      description="Create a new meeting"
+      title="Edit Meeting"
+      description="Edit the meeting details"
       open={open}
       onOpenChange={onOpenChange}
     >
       <MeetingForm
-        onSuccess={(id) => {
+        onSuccess={() => {
           onOpenChange(false);
-          router.push(`/meetings/${id}`);
         }}
         onCancel={() => onOpenChange(false)}
+        initialValues={initialValues}
       />
     </ResponsiveDialog>
   );
 };
 
-export default NewMeetingDialog;
+export default UpdateMeetingDialog;
