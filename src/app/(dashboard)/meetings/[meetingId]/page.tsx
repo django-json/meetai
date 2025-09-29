@@ -8,7 +8,7 @@ import { auth } from "@/lib/auth";
 import MeetingIdView, {
   MeetingIdViewError,
   MeetingIdViewLoading,
-} from "@/modules/meetings/server/ui/views/meeting-id-view";
+} from "@/modules/meetings/ui/views/meeting-id-view";
 import { getQueryClient, trpc } from "@/trpc/server";
 
 interface Props {

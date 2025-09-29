@@ -9,8 +9,8 @@ import { getQueryClient, trpc } from "@/trpc/server";
 import MeetingsView, {
   MeetingsViewError,
   MeetingsViewLoading,
-} from "@/modules/meetings/server/ui/views/meetings-view";
-import MeetingsListHeader from "@/modules/meetings/server/ui/components/meetings-list-header";
+} from "@/modules/meetings/ui/views/meetings-view";
+import MeetingsListHeader from "@/modules/meetings/ui/components/meetings-list-header";
 import { auth } from "@/lib/auth";
 import { SearchParams } from "nuqs";
 import { loadSearchParams } from "@/modules/meetings/params";
