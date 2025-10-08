@@ -10,20 +10,11 @@ import {
 } from "lucide-react";
 import { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
-import humanizeDuration from "humanize-duration";
 
-import { cn } from "@/lib/utils";
+import { cn, formatDuration } from "@/lib/utils";
 import GeneratedAvatar from "@/components/generated-avatar";
 import { Badge } from "@/components/ui/badge";
 import { MeetingGetMany } from "@/modules/meetings/types";
-
-function formatDuration(seconds: number) {
-  return humanizeDuration(seconds * 1000, {
-    largest: 1,
-    round: true,
-    units: ["h", "m", "s"],
-  });
-}
 
 const statusIconMap = {
   upcoming: ClockArrowUpIcon,
